@@ -11,7 +11,10 @@ const app = express();
 // ======================
 // MIDDLEWARE
 // ======================
-app.use(cors());
+app.use(cors({
+  origin: ['https://wanderlust-iota-black.vercel.app', 'http://localhost:3000'],
+  credentials: true
+}));
 app.use(express.json());
 
 // Static folder for uploads
