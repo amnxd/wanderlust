@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 require('dotenv').config();
 
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://wanderlust_user:56onazsJJBltlNgu@cluster0.zynyw0e.mongodb.net/wanderlust?retryWrites=true&w=majority';
 
 const userSchema = new mongoose.Schema({
   name: String, email: { type: String, unique: true }, password: String,
