@@ -1,0 +1,24 @@
+.spinner-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+}
+.spinner-ring {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--pink-light);
+  border-top-color: var(--pink-primary);
+  animation: spinner-rotate 0.85s linear infinite;
+}
+.spinner-sm .spinner-ring { width: 24px; height: 24px; border-width: 3px; }
+.spinner-md .spinner-ring { width: 40px; height: 40px; border-width: 4px; }
+.spinner-lg .spinner-ring { width: 64px; height: 64px; border-width: 5px; }
+.spinner-label { color: var(--text-mid); font-size: 0.9rem; }
+
+@keyframes spinner-rotate { to { transform: rotate(360deg); } }
+
+.spinner-inline { display: inline-block; vertical-align: middle; padding: 0; }
+.spinner-inline .spinner-ring { width: 16px; height: 16px; border-width: 2px; }

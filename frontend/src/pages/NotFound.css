@@ -1,0 +1,102 @@
+.notfound-page {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  background: linear-gradient(135deg, var(--pink-bg) 0%, var(--pink-soft) 100%);
+}
+
+.notfound-content {
+  max-width: 560px;
+  text-align: center;
+  background: white;
+  padding: 48px 36px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+  animation: fadeUp 0.5s ease;
+}
+
+.notfound-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.notfound-balloon {
+  font-size: 4rem;
+  animation: floatBalloon 3s ease-in-out infinite;
+}
+@keyframes floatBalloon {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-12px) rotate(5deg); }
+}
+.notfound-404 {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--pink-primary), var(--pink-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+}
+
+.notfound-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+.notfound-content > p {
+  color: var(--text-mid);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.notfound-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.notfound-suggestions p {
+  font-size: 0.78rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.notfound-pills {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.notfound-pills a {
+  background: var(--pink-bg);
+  color: var(--pink-dark);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.notfound-pills a:hover {
+  background: var(--pink-primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 600px) {
+  .notfound-404 { font-size: 3.5rem; }
+  .notfound-balloon { font-size: 3rem; }
+  .notfound-content { padding: 32px 24px; }
+}

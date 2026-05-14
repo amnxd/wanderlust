@@ -1,0 +1,390 @@
+.pg-main, .pg-otp, .pg-processing { display: flex; flex-direction: column; }
+
+/* Summary */
+.pg-summary {
+  display: flex;
+  gap: 14px;
+  padding: 14px;
+  background: var(--pink-bg);
+  border-radius: var(--radius-sm);
+  margin-bottom: 18px;
+}
+.pg-summary img {
+  width: 86px;
+  height: 86px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+.pg-summary h4 { margin-bottom: 4px; font-size: 1rem; color: var(--text-dark); }
+.pg-summary p { color: var(--text-mid); font-size: 0.85rem; margin: 2px 0; }
+.pg-summary-total { color: var(--pink-primary) !important; font-weight: 700 !important; font-size: 0.95rem !important; margin-top: 6px !important; }
+
+/* Section labels */
+.pg-section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  margin-bottom: 10px;
+}
+
+/* Methods */
+.pg-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.pg-method {
+  background: white;
+  border: 1.5px solid var(--pink-light);
+  padding: 14px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+  text-align: center;
+}
+.pg-method:hover { border-color: var(--pink-primary); background: var(--pink-bg); }
+.pg-method.active {
+  background: var(--pink-soft);
+  border-color: var(--pink-primary);
+  box-shadow: 0 0 0 3px rgba(232,117,138,0.15);
+}
+.pg-method-icon { font-size: 1.4rem; }
+.pg-method-label { font-size: 0.85rem; font-weight: 700; color: var(--text-dark); }
+.pg-method-desc { font-size: 0.7rem; color: var(--text-light); }
+
+/* Fields */
+.pg-fields { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+.pg-fields .form-group { margin: 0; }
+.pg-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* Card brand */
+.pg-input-with-brand { position: relative; }
+.pg-brand-badge {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--pink-soft);
+  color: var(--pink-dark);
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+/* Saved cards */
+.pg-saved-cards { display: flex; flex-direction: column; gap: 8px; }
+.pg-saved-card {
+  display: grid;
+  grid-template-columns: 80px 1fr auto auto auto;
+  gap: 10px;
+  align-items: center;
+  background: white;
+  border: 1.5px solid var(--pink-light);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+  text-align: left;
+}
+.pg-saved-card:hover { border-color: var(--pink-primary); }
+.pg-saved-card.active {
+  background: var(--pink-soft);
+  border-color: var(--pink-primary);
+  box-shadow: 0 0 0 3px rgba(232,117,138,0.15);
+}
+.pg-card-brand {
+  background: linear-gradient(135deg, var(--pink-primary), var(--pink-dark));
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-align: center;
+}
+.pg-card-num { font-family: monospace; font-size: 0.88rem; color: var(--text-dark); }
+.pg-card-name { font-size: 0.82rem; color: var(--text-mid); }
+.pg-card-expiry { font-size: 0.78rem; color: var(--text-light); font-family: monospace; }
+.pg-card-remove { padding: 4px; cursor: pointer; opacity: 0.6; }
+.pg-card-remove:hover { opacity: 1; }
+
+.pg-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-light);
+  font-size: 0.78rem;
+  margin: 4px 0;
+}
+.pg-divider::before, .pg-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--pink-light);
+}
+
+/* Checkbox */
+.pg-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  cursor: pointer;
+  margin-top: 4px;
+}
+.pg-check input { width: auto; margin: 0; accent-color: var(--pink-primary); }
+
+/* UPI apps */
+.pg-upi-apps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+.pg-upi-app {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border: 1.5px solid var(--pink-light);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: all 0.2s;
+}
+.pg-upi-app:hover { border-color: var(--pink-primary); }
+.pg-upi-app.active {
+  background: var(--pink-soft);
+  border-color: var(--pink-primary);
+  box-shadow: 0 0 0 3px rgba(232,117,138,0.15);
+}
+.pg-upi-icon { font-size: 1.3rem; }
+
+/* Banks / Wallets */
+.pg-banks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.pg-bank {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  border: 1.5px solid var(--pink-light);
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: all 0.2s;
+  text-align: left;
+}
+.pg-bank:hover { border-color: var(--pink-primary); }
+.pg-bank.active {
+  background: var(--pink-soft);
+  border-color: var(--pink-primary);
+  box-shadow: 0 0 0 3px rgba(232,117,138,0.15);
+}
+.pg-bank-icon { font-size: 1.2rem; flex-shrink: 0; }
+
+/* Cash info */
+.pg-cash-info {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--pink-bg);
+  padding: 18px;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--pink-primary);
+}
+.pg-cash-icon { font-size: 2.4rem; flex-shrink: 0; }
+.pg-cash-info h4 { margin-bottom: 6px; color: var(--text-dark); }
+.pg-cash-info p { color: var(--text-mid); font-size: 0.9rem; margin-bottom: 10px; line-height: 1.5; }
+.pg-cash-info ul { list-style: none; padding: 0; }
+.pg-cash-info li { font-size: 0.85rem; color: var(--text-mid); padding: 3px 0; }
+
+.pg-info {
+  background: var(--pink-bg);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  color: var(--text-mid);
+  font-size: 0.85rem;
+}
+
+/* Banner */
+.pg-demo-banner {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.pg-error {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  margin-bottom: 12px;
+}
+
+/* Actions */
+.pg-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 4px;
+}
+.pg-actions .btn-outline { padding: 12px 22px; }
+.pg-pay-btn { padding: 12px 28px !important; font-size: 0.98rem !important; }
+
+.pg-secure {
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.76rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.pg-secure span { font-size: 0.85rem; }
+
+/* OTP screen */
+.pg-otp { text-align: center; padding: 8px 0; }
+.pg-back {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--pink-primary);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  padding: 4px 8px;
+  margin-bottom: 16px;
+  font-size: 0.88rem;
+}
+.pg-otp-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--pink-soft);
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+.pg-otp h2 { margin-bottom: 8px; color: var(--text-dark); }
+.pg-otp > p { color: var(--text-mid); margin-bottom: 20px; line-height: 1.5; }
+.pg-demo-hint { color: var(--pink-primary); font-size: 0.85rem; }
+
+.pg-otp-input-wrap {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.pg-otp-input {
+  width: 44px !important;
+  height: 52px !important;
+  text-align: center;
+  font-size: 1.4rem !important;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  padding: 0 !important;
+}
+
+.pg-otp-resend { font-size: 0.85rem; color: var(--text-light); margin-bottom: 16px; }
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--pink-primary);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.pg-confirm-btn {
+  width: 100%;
+  justify-content: center;
+  padding: 14px;
+  font-size: 1rem;
+}
+
+/* Processing screen */
+.pg-processing { text-align: center; padding: 12px 4px; min-height: 360px; justify-content: center; align-items: center; }
+.pg-processing-icon {
+  font-size: 3.5rem;
+  margin-bottom: 12px;
+  animation: spin-emoji 2s linear infinite;
+}
+.pg-processing-icon:has(+ h2:contains("confirmed")) { animation: none; }
+@keyframes spin-emoji { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+
+.pg-processing h2 { margin-bottom: 6px; color: var(--text-dark); }
+.pg-processing > p { color: var(--text-mid); margin-bottom: 24px; }
+
+.pg-progress-bar {
+  width: 100%;
+  max-width: 320px;
+  height: 6px;
+  background: var(--pink-light);
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0 auto 20px;
+}
+.pg-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--pink-primary), var(--pink-dark));
+  transition: width 0.3s ease;
+}
+
+.pg-processing-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+  text-align: left;
+  margin: 0 auto;
+}
+.pg-step {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  transition: color 0.3s;
+}
+.pg-step.done { color: #10b981; font-weight: 600; }
+
+@media (max-width: 600px) {
+  .pg-banks, .pg-upi-apps { grid-template-columns: 1fr; }
+  .pg-saved-card { grid-template-columns: 60px 1fr auto; }
+  .pg-card-name, .pg-card-expiry { display: none; }
+  .pg-actions { flex-direction: column-reverse; }
+  .pg-actions button { width: 100%; justify-content: center; }
+  .pg-otp-input { width: 38px !important; height: 46px !important; font-size: 1.2rem !important; }
+}
