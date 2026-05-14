@@ -17,7 +17,6 @@ const HostDashboard = () => {
   const [existingImages, setExistingImages] = useState([]);
   const [formMsg, setFormMsg] = useState('');
   const [editId, setEditId] = useState(null);
-  const [search, setSearch] = useState('');
 
   useEffect(() => {
     fetchData();
