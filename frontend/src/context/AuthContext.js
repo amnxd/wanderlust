@@ -1,7 +1,9 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
-axios.defaults.baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+console.log('API URL:', apiUrl);
+axios.defaults.baseURL = apiUrl;
 
 axios.interceptors.response.use(
   res => res,
