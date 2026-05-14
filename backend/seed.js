@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 require('dotenv').config();
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://nancypandit25_db_user:TnLqQ3FamuDfREkn@ac-polnbjd-shard-00-00.ukj1dqx.mongodb.net:27017,ac-polnbjd-shard-00-01.ukj1dqx.mongodb.net:27017,ac-polnbjd-shard-00-02.ukj1dqx.mongodb.net:27017/wanderlust?ssl=true&replicaSet=atlas-f56pxl-shard-0&authSource=admin&retryWrites=true&w=majority';
+const MONGO_URI = process.env.MONGO_URI;
 
 const userSchema = new mongoose.Schema({
   name: String, email: { type: String, unique: true }, password: String,
